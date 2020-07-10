@@ -4676,7 +4676,11 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410336643}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
+  m_LocalPosition: {x: 0, y: 1.28, z: -0.25}
+=======
   m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> b461a6a0be9970f750e026fcfaf77f10d333f4ea
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 283315259}
@@ -4729,6 +4733,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1865463901}
+  m_Material: {fileID: 13400000, guid: bab047f609354d9488d1105a51c8846d, type: 2}
+  m_IsTrigger: 0
+=======
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491167619}
@@ -4776,6 +4785,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491167618}
+>>>>>>> b461a6a0be9970f750e026fcfaf77f10d333f4ea
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
