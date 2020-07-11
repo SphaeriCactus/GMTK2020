@@ -2,6 +2,7 @@
 
 public class CameraLook : MonoBehaviour
 {
+    public bool lockMovement = false;
     public Edward edward;
     public float mouseSensitivity = 100f;
 
@@ -26,10 +27,13 @@ public class CameraLook : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        if ((mouseX > 0.1f || mouseY > 0.1f) && !hasLooked)
+        if (lockMovement)
         {
-            hasLooked = true;
-            edward.Speak(1);
+            if ((mouseX > 0.1f || mouseY > 0.1f) && !hasLooked)
+            {
+                hasLooked = true;
+                edward.Speak(1);
+            }
         }
 
         playerTransform.Rotate(Vector3.up * mouseX);

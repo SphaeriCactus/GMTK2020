@@ -5,7 +5,7 @@ public class Edward : MonoBehaviour
     [Header("Clipping")]
     public Transform[] endPoints;
     public Transform player;
-    private int lastIndex = 0;
+    public Transform respawnPoint;
     [Space]
     [Header("Spawning")]
     public GameObject[] objects;
@@ -31,20 +31,18 @@ public class Edward : MonoBehaviour
     {
         if (index == -10)
         {
-            player.transform.position = endPoints[lastIndex].position;
-            player.transform.rotation = endPoints[lastIndex].rotation;
+            player.transform.position = respawnPoint.position;
+            player.transform.rotation = respawnPoint.rotation;
         } else 
         {
             player.transform.position = endPoints[index].position;
             player.transform.rotation = endPoints[index].rotation;
-            lastIndex = index;
         }
     }
 
     public void Spawn(int index)
     {
         objects[index].SetActive(true);
-        lastIndex = index;
     }
 
     public void Speak(int index)
