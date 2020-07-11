@@ -6,6 +6,7 @@ public class MainMenu : MonoBehaviour
 {
     public CanvasGroup group;
     public GameObject game;
+    public Edward edward;
 
     private bool menuEnabled = true;
 
@@ -24,6 +25,8 @@ public class MainMenu : MonoBehaviour
                 group.alpha = 0;
                 game.SetActive(true);
                 FakeGame.isAwaitingInput = true;
+                menuEnabled = false;
+                edward.Speak(0);
             }
         }
     }

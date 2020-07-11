@@ -17,6 +17,7 @@ public class DevTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             DoAction();
+            Destroy(gameObject);
         }
     }
 
