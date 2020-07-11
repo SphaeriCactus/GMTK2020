@@ -23,7 +23,7 @@ public class Edward : MonoBehaviour
     {
         if (Input.GetKeyDown("j"))
         {
-            Clip(0);
+            Clip(-10);
         }
     }
 
