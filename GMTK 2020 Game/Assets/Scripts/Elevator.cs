@@ -8,7 +8,6 @@ public class Elevator : MonoBehaviour
     public float speed;
     void Start()
     {
-        speed = 0.1f;
         moving = false;
     }
 
