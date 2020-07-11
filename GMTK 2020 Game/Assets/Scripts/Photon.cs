@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Photon : MonoBehaviour
 {
@@ -8,7 +7,7 @@ public class Photon : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            //Do shit
+            SceneManager.LoadScene("MinusAHalfRealm");
         }
         else
         {
