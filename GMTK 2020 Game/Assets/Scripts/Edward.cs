@@ -13,6 +13,10 @@ public class Edward : MonoBehaviour
     [Header("Voice Lines")]
     public AudioSource audioSource;
     public AudioClip[] voiceLines;
+    [Space]
+    [Header("Misc")]
+    public AudioSource effectSource;
+    public AudioClip[] effects;
 
     // For testing purposes
     void Update()
@@ -47,5 +51,11 @@ public class Edward : MonoBehaviour
     {
         audioSource.clip = voiceLines[index];
         audioSource.Play();
+    }
+
+    public void Effect(int i)
+    {
+        effectSource.clip = effects[i];
+        effectSource.Play();
     }
 }

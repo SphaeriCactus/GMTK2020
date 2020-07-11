@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class DevTrigger : MonoBehaviour
 {
@@ -7,21 +8,32 @@ public class DevTrigger : MonoBehaviour
     public DevAction toDo;
     public int index;
 
+    public float waitTime = 0;
+
+    public bool canTrigger;
+    public DevTrigger toDisable;
+
+
     void Start()
     {
         edward = GameObject.FindWithTag("Edward").GetComponent<Edward>();
+        canTrigger = true;
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && canTrigger)
         {
-            DoAction();
-            Destroy(gameObject);
+            StartCoroutine(DoAction());
+            canTrigger = false;
+            if (toDisable != null)
+                toDisable.canTrigger = false;
         }
     }
 
-    void DoAction() {
+    IEnumerator DoAction()
+    {
+        yield return new WaitForSeconds(waitTime);
         switch (toDo)
         {
             case DevAction.Clip:

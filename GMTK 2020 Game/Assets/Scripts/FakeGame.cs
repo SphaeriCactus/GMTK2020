@@ -7,6 +7,7 @@ public class FakeGame : MonoBehaviour
 {
     public CameraLook cameraMovement;
     public PlayerController playerMovement;
+    private Edward edward;
 
     public Queue<TextMeshProUGUI> textQ;
     public List<TextMeshProUGUI> textList;
@@ -26,6 +27,8 @@ public class FakeGame : MonoBehaviour
         textQ = new Queue<TextMeshProUGUI>();
         textQ.Enqueue(textList[0]);
 
+        edward = GameObject.FindWithTag("Edward").GetComponent<Edward>();
+
         keyToPress = KeyCode.RightControl;
         secondKey = KeyCode.LeftControl;
     }
@@ -35,7 +38,6 @@ public class FakeGame : MonoBehaviour
         //Lol sorry mac users
         if(isAwaitingInput && (Input.GetKeyDown(keyToPress) || Input.GetKeyDown(secondKey)))
         {
-            Debug.Log("Pressed");
             StartCoroutine(DoControlPress());
         }
     }
@@ -43,6 +45,7 @@ public class FakeGame : MonoBehaviour
     private IEnumerator DoControlPress()
     {
         isAwaitingInput = false;
+        edward.Effect(0);
         StartCoroutine(DisplayText(GetNextText(), "PROCESSING INPUT..."));
         yield return new WaitForSeconds(1.2f);
         TextMeshProUGUI next = GetNextText();
@@ -60,9 +63,11 @@ public class FakeGame : MonoBehaviour
     {
         counter++;
         if (counter > 2)
+        {
             counter = 0;
             cameraMovement.enabled = true;
             playerMovement.enabled = true;
+        }
         switch(counter)
         {
             default:
