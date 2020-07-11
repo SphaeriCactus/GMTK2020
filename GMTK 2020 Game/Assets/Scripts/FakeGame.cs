@@ -66,9 +66,18 @@ public class FakeGame : MonoBehaviour
         switch(counter)
         {
             default:
-                keyToPress = KeyCode.LeftControl;
-                secondKey = KeyCode.RightControl;
-                return "CTRL.";
+                if(SystemInfo.operatingSystemFamily == OperatingSystemFamily.MacOSX)
+                {
+                    keyToPress = KeyCode.LeftCommand;
+                    secondKey = KeyCode.RightCommand;
+                    return "CMD.";
+                }
+                else
+                {
+                    keyToPress = KeyCode.LeftControl;
+                    secondKey = KeyCode.RightControl;
+                    return "CTRL.";
+                }
             case 1:
                 keyToPress = KeyCode.LeftAlt;
                 secondKey = KeyCode.RightAlt;
