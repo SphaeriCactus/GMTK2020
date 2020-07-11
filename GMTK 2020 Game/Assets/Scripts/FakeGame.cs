@@ -5,6 +5,9 @@ using TMPro;
 
 public class FakeGame : MonoBehaviour
 {
+    public CameraLook cameraMovement;
+    public PlayerController playerMovement;
+
     public Queue<TextMeshProUGUI> textQ;
     public List<TextMeshProUGUI> textList;
 
@@ -58,6 +61,8 @@ public class FakeGame : MonoBehaviour
         counter++;
         if (counter > 2)
             counter = 0;
+            cameraMovement.enabled = true;
+            playerMovement.enabled = true;
         switch(counter)
         {
             default:

@@ -853,7 +853,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264745384}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d649d6e2fcf8d79459ead8a0958f2715, type: 3}
   m_Name: 
@@ -1776,6 +1776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de3156634376b64aa9adee37737e55d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraMovement: {fileID: 264745389}
+  playerMovement: {fileID: 1865463903}
   textList:
   - {fileID: 1166986689}
   - {fileID: 1578991900}
@@ -5848,7 +5850,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865463901}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cf24a53f83991a47a08dfb52ccda338, type: 3}
   m_Name: 
