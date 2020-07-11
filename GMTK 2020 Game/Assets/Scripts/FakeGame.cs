@@ -10,20 +10,27 @@ public class FakeGame : MonoBehaviour
 
     public Color textColor;
 
-    private bool isAwaitingInput;
+    public static bool isAwaitingInput;
     private int i;
+
+    private int counter;
+    private KeyCode keyToPress;
+    private KeyCode secondKey;
 
     private void Awake()
     {
-        isAwaitingInput = true;
+        isAwaitingInput = false;
         textQ = new Queue<TextMeshProUGUI>();
         textQ.Enqueue(textList[0]);
+
+        keyToPress = KeyCode.RightControl;
+        secondKey = KeyCode.LeftControl;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         //Lol sorry mac users
-        if(isAwaitingInput && (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)))
+        if(isAwaitingInput && (Input.GetKeyDown(keyToPress) || Input.GetKeyDown(secondKey)))
         {
             Debug.Log("Pressed");
             StartCoroutine(DoControlPress());
@@ -42,8 +49,30 @@ public class FakeGame : MonoBehaviour
             next.text += ".";
             yield return new WaitForSeconds(1f);
         }
-        StartCoroutine(DisplayText(GetNextText(), "DONE. PRESS CTRL ONCE MORE."));
+        StartCoroutine(DisplayText(GetNextText(), "DONE. NOW PRESS " + GetCommand()));
         isAwaitingInput = true;
+    }
+
+    private string GetCommand()
+    {
+        counter++;
+        if (counter > 2)
+            counter = 0;
+        switch(counter)
+        {
+            default:
+                keyToPress = KeyCode.LeftControl;
+                secondKey = KeyCode.RightControl;
+                return "CTRL.";
+            case 1:
+                keyToPress = KeyCode.LeftAlt;
+                secondKey = KeyCode.RightAlt;
+                return "ALT.";
+            case 2:
+                keyToPress = KeyCode.Delete;
+                secondKey = KeyCode.Delete;
+                return "DELETE.";
+        }
     }
 
     private TextMeshProUGUI GetNextText()
@@ -54,6 +83,7 @@ public class FakeGame : MonoBehaviour
             Transform p = t.transform.parent;
             t.transform.SetParent(null);
             t.transform.SetParent(p);
+            textQ.Enqueue(t);
             return t;
         }
         else
