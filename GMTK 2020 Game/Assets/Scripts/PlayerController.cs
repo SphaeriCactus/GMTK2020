@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,13 +7,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Vector3 moveDirection;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         float horizontalMovement = Input.GetAxis("Horizontal");
