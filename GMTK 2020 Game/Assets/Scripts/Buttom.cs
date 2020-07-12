@@ -10,15 +10,17 @@ public class Buttom : MonoBehaviour
     public CameraLook cameraMovement;
     public PlayerController playerMovement;
     private GameObject music;
+    private bool pressed = false;
 
     void Start()
     {
+        pressed = false;
         music = GameObject.FindWithTag("Music");
     }
     
     void Update()
     {
-        if (inside && Input.GetKeyDown("e"))
+        if (inside && Input.GetKeyDown("e") && !pressed)
         {
             StartCoroutine("Press");
         }
@@ -41,6 +43,7 @@ public class Buttom : MonoBehaviour
 
     IEnumerator Press()
     {
+        pressed = true;
         edward.Speak(5);
         yield return new WaitForSeconds(18.1f);
         cameraMovement.enabled = false;
