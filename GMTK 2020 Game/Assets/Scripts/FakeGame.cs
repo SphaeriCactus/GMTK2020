@@ -53,6 +53,7 @@ public class FakeGame : MonoBehaviour
         for (int t = 0; t < 3; t++)
         {
             next.text += ".";
+            edward.Beep();
             yield return new WaitForSeconds(1f);
         }
         StartCoroutine(DisplayText(GetNextText(textColor), "DONE. NOW PRESS " + GetCommand()));
