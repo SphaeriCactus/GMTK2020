@@ -128,6 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d649d6e2fcf8d79459ead8a0958f2715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lockMovement: 0
+  edward: {fileID: 0}
   mouseSensitivity: 300
 --- !u!1 &6259825836573679736
 GameObject:
@@ -285,4 +287,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf24a53f83991a47a08dfb52ccda338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 7
+  walkSpeed: 6.5

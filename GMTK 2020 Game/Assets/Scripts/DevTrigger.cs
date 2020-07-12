@@ -13,6 +13,7 @@ public class DevTrigger : MonoBehaviour
     public bool canTrigger;
     public DevTrigger toDisable;
     public MonoBehaviour scriptToEnable;
+    public bool singleUse = true;
 
 
     void Start()
@@ -26,7 +27,8 @@ public class DevTrigger : MonoBehaviour
         if (other.CompareTag("Player") && canTrigger)
         {
             StartCoroutine(DoAction());
-            canTrigger = false;
+            if (singleUse)
+                canTrigger = false;
             if (toDisable != null)
                 toDisable.canTrigger = false;
         }
