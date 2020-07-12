@@ -6,4 +6,12 @@ public class BGMusic : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
     }
+
+    void Update()
+    {
+        if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "End")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
