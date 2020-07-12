@@ -42,31 +42,34 @@ public class FakeGame : MonoBehaviour
         }
     }
 
-    private IEnumerator DoControlPress()
+    protected virtual IEnumerator DoControlPress()
     {
         isAwaitingInput = false;
         edward.Effect(0);
-        StartCoroutine(DisplayText(GetNextText(), "PROCESSING INPUT..."));
+        StartCoroutine(DisplayText(GetNextText(textColor), "PROCESSING INPUT..."));
         yield return new WaitForSeconds(1.2f);
-        TextMeshProUGUI next = GetNextText();
+        TextMeshProUGUI next = GetNextText(textColor);
         next.text = "";
         for (int t = 0; t < 3; t++)
         {
             next.text += ".";
             yield return new WaitForSeconds(1f);
         }
-        StartCoroutine(DisplayText(GetNextText(), "DONE. NOW PRESS " + GetCommand()));
+        StartCoroutine(DisplayText(GetNextText(textColor), "DONE. NOW PRESS " + GetCommand()));
         isAwaitingInput = true;
     }
 
-    private string GetCommand()
+    protected string GetCommand()
     {
         counter++;
         if (counter > 2)
         {
             counter = 0;
-            cameraMovement.enabled = true;
-            playerMovement.enabled = true;
+            if(playerMovement != null)
+            {
+                cameraMovement.enabled = true;
+                playerMovement.enabled = true;
+            }
         }
         switch(counter)
         {
@@ -94,7 +97,7 @@ public class FakeGame : MonoBehaviour
         }
     }
 
-    private TextMeshProUGUI GetNextText()
+    protected TextMeshProUGUI GetNextText(Color color)
     {
         if(i == textList.Capacity-1) //Reuse text
         {
@@ -103,23 +106,25 @@ public class FakeGame : MonoBehaviour
             t.transform.SetParent(null);
             t.transform.SetParent(p);
             textQ.Enqueue(t);
+            t.color = color;
             return t;
         }
         else
         {
             i++;
-            textList[i].color = textColor;
+            textList[i].color = color;
             textQ.Enqueue(textList[i]);
             return textList[i];
         }
     }
     
-    private IEnumerator DisplayText(TextMeshProUGUI text, string s)
+    protected IEnumerator DisplayText(TextMeshProUGUI text, string s)
     {
         text.text = "";
         foreach (char c in s)
         {
             text.text += c;
+            edward.Beep();
             yield return new WaitForEndOfFrame();
         }
     }

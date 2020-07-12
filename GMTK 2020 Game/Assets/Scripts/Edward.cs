@@ -16,6 +16,7 @@ public class Edward : MonoBehaviour
     [Space]
     [Header("Misc")]
     public AudioSource effectSource;
+    public AudioSource beep;
     public AudioClip[] effects;
 
     // For testing purposes
@@ -51,9 +52,21 @@ public class Edward : MonoBehaviour
         audioSource.Play();
     }
 
-    public void Effect(int i)
+    public void Beep()
+    {
+        if(!beep.isPlaying)
+            beep.Play();
+    }
+
+    public void Effect(int i, float pitch)
     {
         effectSource.clip = effects[i];
+        effectSource.pitch = pitch;
         effectSource.Play();
+    }
+
+    public void Effect(int i)
+    {
+        Effect(i, 1);
     }
 }
