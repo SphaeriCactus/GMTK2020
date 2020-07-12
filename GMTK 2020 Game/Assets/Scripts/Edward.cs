@@ -43,11 +43,6 @@ public class Edward : MonoBehaviour
         audioSource.Play();
     }
 
-    public void Enable(MonoBehaviour script)
-    {
-        script.enabled = true;
-    }
-
     public void Beep()
     {
         if(!beep.isPlaying)

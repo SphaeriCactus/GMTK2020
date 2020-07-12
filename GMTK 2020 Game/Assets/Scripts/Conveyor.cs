@@ -2,14 +2,30 @@
 
 public class Conveyor : MonoBehaviour
 {
-    public float force = 5000f;
+    public float force = 10000;
+    public Rigidbody playerRB;
+    private bool on = false;
+    public bool shouldBeOn = false;
 
-    void OnCollisionStay(Collision other)
+    void OnCollisionEnter(Collision other)
     {
-        GameObject go = other.collider.gameObject;
-        if (go.CompareTag("Player"))
+        if (other.collider.gameObject.CompareTag("Player"))
         {
-            go.GetComponent<Rigidbody>().AddForce(transform.forward * force * Time.deltaTime, ForceMode.Force);
+            on = true;
         }
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        if (other.collider.gameObject.CompareTag("Player"))
+        {
+            on = false;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (on && shouldBeOn)
+            playerRB.AddForce(transform.forward * force * Time.deltaTime, ForceMode.Force);
     }
 }
