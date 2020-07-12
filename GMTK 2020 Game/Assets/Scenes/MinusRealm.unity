@@ -807,7 +807,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!114 &110674877
 MonoBehaviour:
@@ -826,7 +825,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 0
 --- !u!1 &123463075
 GameObject:
@@ -969,7 +967,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!4 &134224346
 Transform:
@@ -2063,7 +2060,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!4 &252207457
 Transform:
@@ -2096,7 +2092,6 @@ MonoBehaviour:
   waitTime: 4.2
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!1 &256700475
 GameObject:
@@ -2808,7 +2803,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!4 &289848168
 Transform:
@@ -3431,7 +3425,6 @@ MonoBehaviour:
   waitTime: 11
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!114 &497301344
 MonoBehaviour:
@@ -3450,7 +3443,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!1 &497331043
 GameObject:
@@ -4224,7 +4216,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!65 &595986413
 BoxCollider:
@@ -4698,7 +4689,6 @@ MonoBehaviour:
   waitTime: 15.5
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!114 &725365197
 MonoBehaviour:
@@ -4717,7 +4707,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 1903448812}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!65 &725365198
 BoxCollider:
@@ -7816,7 +7805,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 289848167}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!114 &1230543689
 MonoBehaviour:
@@ -7835,7 +7823,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!65 &1230543690
 BoxCollider:
@@ -7899,7 +7886,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!65 &1240917134
 BoxCollider:
@@ -8412,7 +8398,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!1 &1344892508
 GameObject:
@@ -11069,7 +11054,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!1 &1767435442
 GameObject:
@@ -11461,7 +11445,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!4 &1792068402
 Transform:
@@ -12783,7 +12766,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 725365197}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!65 &1903448813
 BoxCollider:
@@ -12815,7 +12797,6 @@ MonoBehaviour:
   waitTime: 15.7
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!1 &1907357223
 GameObject:
@@ -13515,7 +13496,6 @@ MonoBehaviour:
   waitTime: 0
   canTrigger: 0
   toDisable: {fileID: 0}
-  scriptToEnable: {fileID: 0}
   singleUse: 1
 --- !u!65 &2006241303
 BoxCollider:
