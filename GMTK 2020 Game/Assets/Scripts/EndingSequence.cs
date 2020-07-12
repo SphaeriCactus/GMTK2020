@@ -25,7 +25,9 @@ public class EndingSequence : FakeGame
 
     IEnumerator Ending()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
+        ed.Speak(0);
+        yield return new WaitForSeconds(6);
 
         //Remove "Control. \n"
         for(int i = 0; i < 9; i++)
@@ -34,7 +36,7 @@ public class EndingSequence : FakeGame
             PlayBackspace();
             yield return new WaitForSeconds(Random.Range(0.4f, 0.6f));
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         PlayBackspace();
         menu.alpha = 0;
         game.SetActive(true);
