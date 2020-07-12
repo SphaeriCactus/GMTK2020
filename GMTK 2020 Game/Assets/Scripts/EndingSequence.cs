@@ -25,7 +25,7 @@ public class EndingSequence : FakeGame
 
     IEnumerator Ending()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(5);
 
         //Remove "Control. \n"
         for(int i = 0; i < 9; i++)
@@ -46,7 +46,7 @@ public class EndingSequence : FakeGame
     {
         if(creditsCounter >= credits.Length)
         {
-            StartCoroutine(End());
+            End();
             yield break;
         }
         StartCoroutine(DisplayText(GetNextText(textColor), "PROCESSING INPUT..."));
@@ -66,10 +66,9 @@ public class EndingSequence : FakeGame
         StartCoroutine(DoControlPress());
     }
 
-    private IEnumerator End()
+    private void End()
     {
-        yield return null;
-        Debug.Log("end of credits");
+        Application.Quit();
     }
 
     void PlayBackspace()
