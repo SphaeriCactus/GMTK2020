@@ -19,15 +19,6 @@ public class Edward : MonoBehaviour
     public AudioSource beep;
     public AudioClip[] effects;
 
-    // For testing purposes
-    void Update()
-    {
-        if (Input.GetKeyDown("j"))
-        {
-            Clip(-10);
-        }
-    }
-
     public void Clip(int index)
     {
         if (index == -10)
@@ -50,6 +41,11 @@ public class Edward : MonoBehaviour
     {
         audioSource.clip = voiceLines[index];
         audioSource.Play();
+    }
+
+    public void Enable(MonoBehaviour script)
+    {
+        script.enabled = true;
     }
 
     public void Beep()

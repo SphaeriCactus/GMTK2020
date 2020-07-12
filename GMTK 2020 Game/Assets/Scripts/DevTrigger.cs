@@ -4,7 +4,7 @@ using UnityEngine;
 public class DevTrigger : MonoBehaviour
 {
     private Edward edward;
-    public enum DevAction {Clip, Spawn, Speak};
+    public enum DevAction {Clip, Spawn, Speak, Enable};
     public DevAction toDo;
     public int index;
 
@@ -12,6 +12,7 @@ public class DevTrigger : MonoBehaviour
 
     public bool canTrigger;
     public DevTrigger toDisable;
+    public MonoBehaviour scriptToEnable;
 
 
     void Start()
@@ -44,6 +45,9 @@ public class DevTrigger : MonoBehaviour
                 break;
             case DevAction.Speak:
                 edward.Speak(index);
+                break;
+            case DevAction.Enable:
+                edward.Enable(scriptToEnable);
                 break;
         }
     }
