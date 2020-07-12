@@ -9,6 +9,13 @@ public class Buttom : MonoBehaviour
     public Edward edward;
     public CameraLook cameraMovement;
     public PlayerController playerMovement;
+    private GameObject music;
+
+    void Start()
+    {
+        music = GameObject.FindWithTag("Music");
+    }
+    
     void Update()
     {
         if (inside && Input.GetKeyDown("e"))
@@ -39,6 +46,7 @@ public class Buttom : MonoBehaviour
         cameraMovement.enabled = false;
         playerMovement.enabled = false;
         yield return new WaitForSeconds(6.5f);
+        Destroy(music);
         SceneManager.LoadScene("End");
     }
 }
