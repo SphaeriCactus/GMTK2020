@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MinusAHalfRealm.unity
     guid: db2ae85f9e17ada40a744d89a309bd46
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/Scenes/End.unity
+    guid: d297679a7cc75cd41b7e3dd659cfede4
   m_configObjects: {}
